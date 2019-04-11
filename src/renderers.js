@@ -119,7 +119,10 @@ function ParsedHtml(props) {
 }
 
 function VirtualHtml(props) {
-  return createElement(props.tag, getCoreProps(props), props.children)
+  if (props.children) {
+    return createElement(props.tag, getCoreProps(props), props.children)
+  }
+  return createElement(props.tag, getCoreProps(props))
 }
 
 function NullRenderer() {
