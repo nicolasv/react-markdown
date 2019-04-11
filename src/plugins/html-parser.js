@@ -71,7 +71,7 @@ function parseHtml(config, tree, props) {
 
       if (matching) {
         parent.children.splice(index, 0, parsedHtml(current, matching, parent))
-      } else if (!current.opening) {
+      } else if (current.opening) {
         open.push(current)
       }
 
